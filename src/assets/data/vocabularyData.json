@@ -1,0 +1,43 @@
+{
+  "Everyday English": [
+    { "term": "Hello", "translation": "Hallo" },
+    { "term": "Worry, worries", "translation": "Sorgen" },
+    { "term": "Under the weather", "translation": "Unwohl" },
+    { "term": "Never mind", "translation": "Macht nichts" },
+    { "term": "To appreciate", "translation": "Schätzen" },
+    { "term": "To be free", "translation": "Frei sein" },
+    { "term": "To complain", "translation": "Sich beschweren" },
+    { "term": "To grab something", "translation": "Etwas greifen" },
+    { "term": "To starve", "translation": "Verhungern" }
+  ],
+  "On the Road": [
+    { "term": "Car", "translation": "Auto" },
+    { "term": "Traffic", "translation": "Verkehr" },
+    { "term": "Highway", "translation": "Autobahn" },
+    { "term": "Gas station", "translation": "Tankstelle" }
+  ],
+  "In the Hospital": [
+    { "term": "Doctor", "translation": "Arzt" },
+    { "term": "Nurse", "translation": "Krankenschwester" },
+    { "term": "Surgery", "translation": "Operation" },
+    { "term": "Medicine", "translation": "Medizin" }
+  ],
+  "At the Hair saloon": [
+    { "term": "Haircut", "translation": "Haarschnitt" },
+    { "term": "Shampoo", "translation": "Shampoo" },
+    { "term": "Stylist", "translation": "Stylist" },
+    { "term": "Scissors", "translation": "Schere" }
+  ],
+  "Idioms": [
+    { "term": "Break the ice", "translation": "Das Eis brechen" },
+    { "term": "Piece of cake", "translation": "Kinderspiel" },
+    { "term": "Hit the sack", "translation": "Ins Bett gehen" },
+    { "term": "Under the weather", "translation": "Unwohl" }
+  ],
+  "Holidays": [
+    { "term": "Christmas", "translation": "Weihnachten" },
+    { "term": "Easter", "translation": "Ostern" },
+    { "term": "New Year", "translation": "Neujahr" },
+    { "term": "Thanksgiving", "translation": "Erntedankfest" }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "Everyday English": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ],
+  "On the Road": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ],
+  "In the Hospital": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ],
+  "At the Hair saloon": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ],
+  "Idioms": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ],
+  "Holidays": [
+    {"file":  "audio1.mp3", "text": "First Audio text"},
+    {"file":  "audio2.mp3", "text": "Second Audio text"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "Everyday English": [
+    { "before": "When you see someone, you say", "after": ".", "solution": "Hello", "selected": "" },
+    { "before": "She had many", "after": "about the upcoming exam.", "solution": "worries", "selected": "" },
+    { "before": "He felt", "after": "and decided to stay home.", "solution": "under the weather", "selected": "" },
+    { "before": "If you make a mistake, just say", "after": ".", "solution": "never mind", "selected": "" },
+    { "before": "I really", "after": "your help with this project.", "solution": "appreciate", "selected": "" },
+    { "before": "Everyone should have the right", "after": ".", "solution": "to be free", "selected": "" },
+    { "before": "It's not good", "after": "about everything.", "solution": "to complain", "selected": "" },
+    { "before": "He tried", "after": "from the top shelf.", "solution": "to grab something", "selected": "" },
+    { "before": "Without food, people will", "after": ".", "solution": "starve", "selected": "" }
+  ],
+  "On the Road": [
+    { "before": "I need to fill up my", "after": "with gas.", "solution": "car", "selected": "" },
+    { "before": "There was a lot of", "after": "on the way to work.", "solution": "traffic", "selected": "" },
+    { "before": "We drove on the", "after": "for hours.", "solution": "highway", "selected": "" },
+    { "before": "We stopped at a", "after": "to get some snacks.", "solution": "gas station", "selected": "" }
+  ],
+  "In the Hospital": [
+    { "before": "The", "after": "gave me a prescription.", "solution": "doctor", "selected": "" },
+    { "before": "The", "after": "helped me with my bandage.", "solution": "nurse", "selected": "" },
+    { "before": "I had to undergo", "after": "last week.", "solution": "surgery", "selected": "" },
+    { "before": "I need to take my", "after": "twice a day.", "solution": "medicine", "selected": "" }
+  ],
+  "At the Hair saloon": [
+    { "before": "I need a", "after": "before the event.", "solution": "haircut", "selected": "" },
+    { "before": "The", "after": "smells really nice.", "solution": "shampoo", "selected": "" },
+    { "before": "The", "after": "gave me a new look.", "solution": "stylist", "selected": "" },
+    { "before": "The", "after": "were very sharp.", "solution": "scissors", "selected": "" }
+  ],
+  "Idioms": [
+    { "before": "Let's", "after": "and get to know each other.", "solution": "break the ice", "selected": "" },
+    { "before": "This task is a", "after": ".", "solution": "piece of cake", "selected": "" },
+    { "before": "I'm tired, I need to", "after": ".", "solution": "hit the sack", "selected": "" },
+    { "before": "He felt", "after": "and decided to stay home.", "solution": "under the weather", "selected": "" }
+  ],
+  "Holidays": [
+    { "before": "We celebrate", "after": "in December.", "solution": "Christmas", "selected": "" },
+    { "before": "We hunt for eggs on", "after": ".", "solution": "Easter", "selected": "" },
+    { "before": "We make resolutions on", "after": ".", "solution": "New Year", "selected": "" },
+    { "before": "We have a big feast on", "after": ".", "solution": "Thanksgiving", "selected": "" }
+  ]
+}

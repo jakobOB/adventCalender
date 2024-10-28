@@ -1,0 +1,69 @@
+$gutter: 1rem;
+@import '@/assets/layout/layout';
+
+/* PrimeVue */
+@import 'primeflex/primeflex';
+@import 'primeicons/primeicons.css';
+
+/* Demos */
+@import '@/assets/demo/demo';
+
+// -----------------------------------------------------
+/* Global Styles */
+@import "@/assets/styles/colors.scss";
+
+@font-face {
+  font-family: 'Manrope-font';
+  src: url("../fonts/Manrope-Font.ttf");
+}
+
+html, body{
+  font-family: Manrope-font, serif;
+  background-color: #fefae4;
+  align-content: center;
+
+  .app {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.dialog-container {
+  padding: 1.5rem;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  .dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #3b3b3b;
+  }
+
+  .dialog-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3b3b3b;
+  }
+}
+
+.close-button {
+  margin: 20px auto 0;
+  width: 100%;
+  text-align: center;
+}
+
+.p-button-danger {
+  background-color: #e74c3c !important;
+  border: none;
+}
+
+.p-button-danger:hover {
+  background-color: #c0392b !important;
+}
+
