@@ -26,6 +26,10 @@ export class LocalStorageService {
         }
     }
 
+    clearLocalStorage() {
+        localStorage.clear();
+    }
+
     getData(storage) {
         return JSON.parse(localStorage.getItem(storage));
     }

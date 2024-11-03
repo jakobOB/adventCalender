@@ -14,7 +14,7 @@
           <span>{{ sentence.before }}</span>
           <Dropdown
               v-model="sentence.selected"
-              :options="words"
+              :options="shuffleWords()"
               placeholder="Select Word"
               class="sentence-dropdown"
               :class="{ 'p-invalid': sentence.invalid, 'p-correct': allCorrect }"
@@ -25,7 +25,7 @@
     </div>
     <div class="button-container">
       <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
-      <Button label="Check" icon="pi pi-check" @click="check" class="p-button-rounded p-button-success close-button" />
+      <Button label="Check" icon="pi pi-check" @click="check" class="p-button-rounded close-button check-button" />
     </div>
     <div class="confetti-container">
       <ConfettiExplosion v-if="confettiVisible" :duration="2000" :particleCount="300" :force="1.0" :stageHeight="1000"/>
@@ -49,6 +49,10 @@ const visible = ref(props.visible);
 const confettiVisible = ref(false);
 
 const allCorrect = ref(false);
+
+const shuffleWords = () => {
+  return [...props.words].sort(() => Math.random() - 0.5);
+};
 
 const check = () => {
   allCorrect.value = true;

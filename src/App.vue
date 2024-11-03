@@ -2,8 +2,8 @@
   <div class="app-container">
     <CalenderComponent />
 
-    <Vue3Lottie :animationData="snowJSON" class="snow" style="left: -5%"/>
-    <Vue3Lottie :animationData="snowJSON" class="snow" style="left: 75%"/>
+    <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: -5%"/>
+    <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: 75%"/>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ import CalenderComponent from "./components/CalenderComponent.vue";
 import { Vue3Lottie } from 'vue3-lottie'
 import {LocalStorageService} from "@/service/storageservice.js";
 
-import snowJSON from '@/assets/animations/snow.json';
+import snowflakeJSON from '@/assets/animations/snow2.json';
 import {onMounted} from "vue";
 
 const localStorageService = new LocalStorageService();
@@ -33,9 +33,9 @@ onMounted(() => {
 
 .snow {
   position: absolute;
-  top: 0;
+  top: -5%;
   z-index: 1;
-  height: 100%;
+  height: 50%;
   width: 33%;
 }
 </style>

@@ -19,7 +19,7 @@ $gutter: 1rem;
 
 html, body{
   font-family: Manrope-font, serif;
-  background-color: #fefae4;
+  background-color: #14192b;
   align-content: center;
 
   .app {
@@ -58,12 +58,23 @@ html, body{
   text-align: center;
 }
 
+.check-button {
+  background: #244f24;
+  border: none;
+}
+
+.check-button:hover {
+  background-color: #2b702b;
+}
+
 .p-button-danger {
-  background-color: #e74c3c !important;
+  background-color: #943c4b !important;
   border: none;
 }
 
 .p-button-danger:hover {
   background-color: #c0392b !important;
 }
+
+
 

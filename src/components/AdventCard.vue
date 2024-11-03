@@ -4,10 +4,7 @@
     <div class="advent-card" @click="openDialog" :class="{ 'opened': doorOpen }" >
       <div class="card-front">
         <img :src="`./doors/${day}.png`" alt="Card Front" class="card-image" />
-
-        <div v-if="doorOpen" class="opened-overlay">
-          <span>Opened</span>
-        </div>
+        <div v-if="doorOpen" class="opened-overlay"></div>
       </div>
     </div>
 
@@ -83,7 +80,8 @@ const openDialog = () => {
   // check if current date is < props.day,  only get the day if it is less than or equal to the current date
   let doorsOpened = localStorageService.getData('doorsOpened');
   if (props.day > new Date().getDate() || props.day-1 !== doorsOpened) {
-    return;
+    // TODO: uncomment the line below to prevent opening the door before the day
+    // return;
   }
 
   const exercise = getExercise(props.day);
@@ -199,16 +197,11 @@ watch(translationSentences, (newVal) => {
   border-radius: 10px;
 }
 
-.advent-card.opened {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Change the shadow for opened state */
-  filter: grayscale(80%); /* Optionally make the card appear "grayed out" */
-}
-
 .opened-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -8,16 +8,16 @@
     <div class="dialog-container">
       <h3 class="dialog-title">{{ topic }}</h3>
       <h4 class="dialog-subtitle">Translation</h4>
-      <h6 class="descriptions">Drag the words in corrects order into the box.</h6>
+      <p v-if="!allDone" class="dialog-description">Drag the words in corrects order into the box.</p>
 
       <!-- Draggable Container -->
       <div v-if="!allDone" class="sentence-builder">
-        <div>
-          <span>Finished Sentences: </span>
-          <span>{{ currentTranslationIndex }} / {{ translations.length }}</span>
+        <div class="sentence-progress">
+          <span>Finished Sentences:</span>
+          <span class="progress-count">{{ currentTranslationIndex }} / {{ translations.length }}</span>
         </div>
-        <!-- Display German text -->
-        <div>
+        <!-- German Text Display -->
+        <div class="german-translation">
           <span>{{ germanTranslation }}</span>
         </div>
 
@@ -59,8 +59,6 @@
             </div>
           </draggable>
         </div>
-
-        <button @click="checkAnswer">Check Sentence</button>
       </div>
 
       <div v-else class="sentence-builder">
@@ -68,7 +66,12 @@
       </div>
 
     </div>
-    <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
+    <div class="button-container">
+      <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
+      <Button label="Check" icon="pi pi-check" @click="checkAnswer" class="p-button-rounded p-button-success close-button check-button" />
+    </div>
+<!--    <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />-->
+<!--    <Button label="Check Sentence" icon="pi pi-check" @click="checkAnswer" class="p-button-rounded p-button-success check-button" />-->
     <div class="confetti-container">
       <ConfettiExplosion v-if="confettiVisible" :duration="2000" :particleCount="300" :force="1.0" :stageHeight="1000"/>
     </div>
@@ -90,6 +93,7 @@ const draggable = VueDraggableNext;
 const emit = defineEmits(['closeDialog', 'dayCompleted']);
 const visible = ref(props.visible);
 const confettiVisible = ref(false);
+const sentenceValid = ref(true);
 
 const currentTranslationIndex = ref(0);
 const germanTranslation = ref('')
@@ -126,6 +130,8 @@ const checkAnswer = () => {
     props.translations[currentTranslationIndex.value].valid = 1;
     currentTranslationIndex.value++;
     loadCurrentTranslation();
+  } else {
+    sentenceValid.value = false;
   }
 };
 
@@ -161,21 +167,46 @@ const dayCompleted = () => {
 </script>
 
 <style scoped>
-button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: #333;
 }
 
 .sentence-builder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   gap: 20px;
+
+  .sentence-progress {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-count {
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  .german-translation {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+  }
 }
 
 .drop-zone-container {
@@ -209,7 +240,12 @@ button {
   top: 50%;
 }
 
-.descriptions {
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
 
+.close-button {
+  width: 40%;
 }
 </style>
