@@ -9,9 +9,11 @@
     </div>
 
     <div>
-      <Vue3Lottie :animationData="santaJSON" class="figure" :class="isTalking ? 'highlight' : ''"/>
-      <div v-if="isTalking" class="speech-bubble" v-html="text">
+      <div v-if="isTalking" class="speech-bubble">
+        <div v-html="text"></div>
+        <button class="close-talk" @click="toggleTalking">OK</button>
       </div>
+      <Vue3Lottie :animationData="santaJSON" class="figure" :class="isTalking ? 'highlight' : ''"/>
     </div>
   </div>
 </template>
@@ -68,6 +70,7 @@ const resetCalendar = () => {
   doorsOpened.value = [];
 };
 
+// TODO: Implement the toggleTalking function depending on the day
 const toggleTalking = () => {
   isTalking.value = !isTalking.value;
 
@@ -77,8 +80,6 @@ const toggleTalking = () => {
   }
 
 };
-
-
 </script>
 
 <style scoped>
@@ -134,7 +135,7 @@ const toggleTalking = () => {
 
 .speech-bubble {
   position: absolute;
-  top: 35%;
+  bottom: 32%;
   left: 70%;
   transform: translateX(-70%);
   z-index: 1000;
@@ -167,5 +168,17 @@ const toggleTalking = () => {
   right: 0;
   z-index: -2;
   animation: float2 5s ease-in-out infinite;
+}
+
+.close-talk {
+  background-color: #774f38;
+  color: #ece5ce;
+  border: none;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: "Baloo 2", cursive;
+  cursor: pointer;
 }
 </style>
