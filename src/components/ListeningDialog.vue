@@ -14,7 +14,7 @@
       </div>
       <div class="audio-player">
         <!-- Audio Element (hidden) -->
-        <audio id="player" ref="player" @ended="endedAudio" :src="audioSrc"></audio>
+        <audio id="player" ref="player" @ended="resetAudioValues" :src="audioSrc"></audio>
         <!-- Progress Bar -->
         <div class="progress-container">
           <div class="progress-bar">
@@ -31,7 +31,7 @@
         <div class="questions-container">
           <p>What is the content of the dialog?</p>
           <div v-for="(option, idx) in listening[0].options" :key="idx" class="option">
-            <input type="radio" :id="`option-${idx}`" :name="question" :value="idx" v-model="selectedOption" />
+            <input type="radio" :id="`option-${idx}`" :value="idx" v-model="selectedOption" />
             <label :for="`option-${idx}`">{{ option }}</label>
           </div>
           <Button label="Check Answer" @click="checkAnswer" class="p-button-rounded p-button-success check-button" />
@@ -40,8 +40,8 @@
     </div>
     <div class="button-container">
       <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
-      <Button v-if="!isPlaying" label="Play Audio" icon="pi pi-play" @click="playAudio" class="p-button-rounded p-button-success close-button" />
-      <Button v-else label="Stop Audio" icon="pi pi-stop" @click="stopAudio" class="p-button-rounded p-button-danger close-button" />
+      <Button v-if="!isPlaying" label="Play Audio" icon="pi pi-play" @click="playStopAudio" class="p-button-rounded p-button-success close-button" />
+      <Button v-else label="Pause Audio" icon="pi pi-pause" @click="stopAudio" class="p-button-rounded p-button-danger close-button" />
     </div>
   </Dialog>
 </template>
@@ -61,7 +61,7 @@ const visible = ref(props.visible);
 const audioSrc = ref('');
 const currentAudioIndex = ref(0);
 
-const audio = ref()
+const audio = ref();
 const isPlaying = ref(false);
 const currentTime = ref(0);
 const duration = ref(0);
@@ -105,23 +105,27 @@ const loadAudio = () => {
   }
 };
 
-const playAudio = () => {
-  if(!isPlaying.value) {
+const playStopAudio = () => {
+  if(audioSrc.value) {
+    if(isPlaying.value) {
+      audio.value.pause()
+    }
+    else {
+      audio.value.play()
+    }
+    isPlaying.value = !isPlaying.value
+  } else {
     loadAudio();
     if(audioSrc.value) {
-      audio.value = document.getElementById("player");
+      audio.value = document.getElementById("player")
       audio.value.onloadedmetadata = () => {
         duration.value = audio.value.duration;
         audio.value.play();
-        timeoutID.value = setInterval(updateProgress, 1000);
+        timeoutID.value = setInterval(updateProgress, 10);
       };
-    }
-  } else {
-    if (audio.value) {
-      audio.value.pause();
+      isPlaying.value = true;
     }
   }
-  isPlaying.value = !isPlaying.value;
 };
 
 const stopAudio = () => {
@@ -129,11 +133,6 @@ const stopAudio = () => {
     audio.value.pause();
   }
   isPlaying.value = false;
-};
-
-const endedAudio = () => {
-  isPlaying.value = false;
-  resetAudioValues();
 };
 
 const checkAnswer = () => {
