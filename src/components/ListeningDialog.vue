@@ -10,13 +10,31 @@
       <h4 class="dialog-subtitle">Listening</h4>
 
       <div class="animation-container">
-        <div class="snowman-wrapper">
-          <Vue3Lottie :animationData="snowmanJSON" class="snowman"/>
-          <div v-if="currentAudioIndex % 2 === 0 && currentText" class="speech-bubble">{{ currentText }}</div>
+
+      </div>
+      <div class="audio-player">
+        <!-- Audio Element (hidden) -->
+        <audio id="player" ref="player" @ended="endedAudio" :src="audioSrc"></audio>
+        <!-- Progress Bar -->
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress" :style="{ width: `${progressPercentage}%` }">
+              <img src="@/assets/animations/sledge.png" class="sledge" alt="sledge"/>
+            </div>
+          </div>
         </div>
-        <div class="snowman-wrapper">
-          <Vue3Lottie :animationData="snowmanJSON" class="snowman"/>
-          <div v-if="currentAudioIndex % 2 !== 0 && currentText" class="speech-bubble">{{ currentText }}</div>
+        <!-- Time Display -->
+        <div class="time-display">
+          <span>{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</span>
+        </div>
+        <!-- Single Choice Questions -->
+        <div class="questions-container">
+          <p>What is the content of the dialog?</p>
+          <div v-for="(option, idx) in listening[0].options" :key="idx" class="option">
+            <input type="radio" :id="`option-${idx}`" :name="question" :value="idx" v-model="selectedOption" />
+            <label :for="`option-${idx}`">{{ option }}</label>
+          </div>
+          <Button label="Check Answer" @click="checkAnswer" class="p-button-rounded p-button-success check-button" />
         </div>
       </div>
     </div>
@@ -30,9 +48,6 @@
 
 <script setup>
 import {ref, watch} from 'vue';
-import {Vue3Lottie} from "vue3-lottie";
-
-import snowmanJSON from "@/assets/animations/snowman.json";
 
 const props = defineProps({
   topic: String,
@@ -43,58 +58,90 @@ const props = defineProps({
 const emit = defineEmits(['closeDialog']);
 const visible = ref(props.visible);
 
-const isPlaying = ref(false);
-let audio = new Audio();
 const audioSrc = ref('');
-const currentText = ref('');
 const currentAudioIndex = ref(0);
+
+const audio = ref()
+const isPlaying = ref(false);
+const currentTime = ref(0);
+const duration = ref(0);
+const progressPercentage = ref(0);
+const timeoutID = ref(null);
+
+const selectedOption = ref(null);
 
 watch(() => props.visible, (newVal) => {
   visible.value = newVal;
 });
 
+function updateProgress() {
+  currentTime.value = audio.value.currentTime;
+  progressPercentage.value = (currentTime.value / duration.value) * 100;
+}
+
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+  return `${minutes}:${secs}`;
+}
+
 const closeDialog = () => {
-  audio.pause();
-  audio.src = '';
-  currentText.value = "";
+  clearInterval(timeoutID.value);
+  resetAudioValues();
   emit('closeDialog');
+};
+
+const resetAudioValues = () => {
+  stopAudio();
+  currentTime.value = 0;
+  duration.value = 0;
+  progressPercentage.value = 0;
+  audioSrc.value = '';
 };
 
 const loadAudio = () => {
   if (currentAudioIndex.value < props.listening.length) {
     audioSrc.value = `/src/assets/data/audio/${props.listening[currentAudioIndex.value].file}`;
-    currentText.value = props.listening[currentAudioIndex.value].text;
   }
 };
 
 const playAudio = () => {
-  loadAudio();
-  if(audioSrc.value) {
-    audio.src = audioSrc.value;
-    audio.play();
-    isPlaying.value = true;
-    audio.onended = () => {
-      playNextAudio();
-    };
-  }
-};
-
-const playNextAudio = () => {
-  currentAudioIndex.value++;
-  if (currentAudioIndex.value < props.listening.length) {
-    playAudio();
+  if(!isPlaying.value) {
+    loadAudio();
+    if(audioSrc.value) {
+      audio.value = document.getElementById("player");
+      audio.value.onloadedmetadata = () => {
+        duration.value = audio.value.duration;
+        audio.value.play();
+        timeoutID.value = setInterval(updateProgress, 1000);
+      };
+    }
   } else {
-    stopAudio();
-    currentText.value = "";
-    currentAudioIndex.value = 0;
+    if (audio.value) {
+      audio.value.pause();
+    }
   }
+  isPlaying.value = !isPlaying.value;
 };
 
 const stopAudio = () => {
-  if (audio) {
-    audio.pause();
+  if (audio.value) {
+    audio.value.pause();
   }
   isPlaying.value = false;
+};
+
+const endedAudio = () => {
+  isPlaying.value = false;
+  resetAudioValues();
+};
+
+const checkAnswer = () => {
+  if (selectedOption.value === props.listening[0].answer) {
+    alert('Correct Answer!');
+  } else {
+    alert('Wrong Answer!');
+  }
 };
 </script>
 
@@ -111,82 +158,62 @@ const stopAudio = () => {
 .animation-container {
   display: flex;
   justify-content: space-around;
-
-  .snowman-wrapper {
-    position: relative;
-  }
-
-  .snowman {
-    height: 200px;
-    width: 200px;
-  }
 }
 
-.speech-bubble {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ece5ce;
-  border-radius: 11px;
-  padding: 10px;
+.audio-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #3b82f6;
+  position: relative;
+}
+
+.sledge {
+  position: relative;
+  left: 100%;
+  height: 20px;
+}
+
+.time-display {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.questions-container {
+  margin-top: 20px;
   text-align: center;
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 15px;
-  color: #774f38;
-  box-shadow: 20px 20px #83af9b;
-  font-family: "Baloo 2", cursive;
-  animation: float 5s ease-in-out infinite;
 }
 
-.speech-bubble:after {
-  content: ".";
-  font-weight: bold;
-  -webkit-text-fill-color: #ece5ce;
-  text-shadow: 22px 22px #83af9b;
-  text-align: left;
-  font-size: 55px;
-  width: 55px;
-  height: 11px;
-  line-height: 30px;
-  border-radius: 11px;
-  background-color: #ece5ce;
-  position: absolute;
-  display: block;
-  bottom: -30px;
-  left: 0;
-  box-shadow: 22px 22px #83af9b;
-  z-index: -2;
-  animation: float2 5s ease-in-out infinite;
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.option input {
+  margin-right: 10px;
 }
 
-@keyframes float2 {
-  0% {
-    line-height: 30px;
-    transform: translateY(0px);
-  }
-  55% {
-    transform: translateY(-20px);
-  }
-  60% {
-    line-height: 10px;
-  }
-  100% {
-    line-height: 30px;
-    transform: translateY(0px);
-  }
+.check-button {
+  margin-top: 10px;
 }
 </style>

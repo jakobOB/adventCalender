@@ -118,7 +118,7 @@ const toggleTalking = () => {
 
 .figure {
   position: absolute;
-  top: 75%;
+  top: 78%;
   z-index: 1000;
   height: 20%;
   width: 15%;
@@ -130,7 +130,7 @@ const toggleTalking = () => {
 }
 
 .figure.highlight {
-  transform: scale(1.5) translateX(-50%);
+  transform: scale(1.5) translateX(-50%) translateY(-10%);
 }
 
 .speech-bubble {
@@ -147,7 +147,6 @@ const toggleTalking = () => {
   letter-spacing: 1px;
   font-size: 15px;
   color: #774f38;
-  font-family: "Baloo 2", cursive;
   animation: float 5s ease-in-out infinite;
 }
 
@@ -178,7 +177,6 @@ const toggleTalking = () => {
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: bold;
-  font-family: "Baloo 2", cursive;
   cursor: pointer;
 }
 </style>

@@ -1,26 +1,74 @@
 {
   "Everyday English": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ],
   "On the Road": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ],
   "In the Hospital": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ],
   "At the Hair saloon": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ],
   "Idioms": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ],
   "Holidays": [
-    {"file":  "audio1.mp3", "text": "First Audio text"},
-    {"file":  "audio2.mp3", "text": "Second Audio text"}
+    {
+      "file":  "audio1.mp3",
+      "options": [
+        "First Audio text",
+        "Second Audio text",
+        "Third Audio text",
+        "Fourth Audio text"
+      ],
+      "answer": 0
+    }
   ]
 }
