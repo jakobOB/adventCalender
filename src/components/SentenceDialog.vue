@@ -9,7 +9,8 @@
     <div class="dialog-container">
       <h3 class="dialog-title">{{ topic }}</h3>
       <h4 class="dialog-subtitle">Complete the Sentences</h4>
-      <div class="sentence-completion">
+
+      <div v-if="!done" class="sentence-completion">
         <div v-for="(sentence, index) in sentences" :key="index" class="sentence-item">
           <span>{{ sentence.before }}</span>
           <Dropdown
@@ -21,6 +22,9 @@
           />
           <span>{{ sentence.after }}</span>
         </div>
+      </div>
+      <div v-else class="sentence-completion">
+        <p style="text-align: center">Well done! You have completed all sentences.</p>
       </div>
     </div>
     <div class="button-container">
@@ -42,7 +46,9 @@ const props = defineProps({
   words: Array,
   topic: String,
   visible: Boolean,
+  done: Boolean
 });
+
 
 const emit = defineEmits(['closeDialog', 'dayCompleted']);
 const visible = ref(props.visible);
@@ -77,7 +83,6 @@ const explode = async () => {
 watch(() => props.visible, (newVal) => {
   visible.value = newVal;
 });
-
 
 const dayCompleted = () => {
   emit('dayCompleted');

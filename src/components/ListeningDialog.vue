@@ -12,7 +12,7 @@
       <div class="animation-container">
 
       </div>
-      <div class="audio-player">
+      <div v-if="!done" class="audio-player">
         <!-- Audio Element (hidden) -->
         <audio id="player" ref="player" @ended="resetAudioValues" :src="audioSrc"></audio>
         <!-- Progress Bar -->
@@ -29,7 +29,7 @@
         </div>
         <!-- Single Choice Questions -->
         <div class="questions-container">
-          <p>What is the content of the dialog?</p>
+          <p style="font-weight: bold">{{listening[0].question}}</p>
           <div v-for="(option, idx) in listening[0].options" :key="idx" class="option">
             <input type="radio" :id="`option-${idx}`" :value="idx" v-model="selectedOption" />
             <label :for="`option-${idx}`">{{ option }}</label>
@@ -37,29 +37,39 @@
           <Button label="Check Answer" @click="checkAnswer" class="p-button-rounded p-button-success check-button" />
         </div>
       </div>
+
+      <div v-else class="audio-player">
+        <p>Well done! You have completed this task amazingly.</p>
+      </div>
     </div>
     <div class="button-container">
       <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
       <Button v-if="!isPlaying" label="Play Audio" icon="pi pi-play" @click="playStopAudio" class="p-button-rounded p-button-success close-button" />
       <Button v-else label="Pause Audio" icon="pi pi-pause" @click="stopAudio" class="p-button-rounded p-button-danger close-button" />
     </div>
+    <div class="confetti-container">
+      <ConfettiExplosion v-if="confettiVisible" :duration="2000" :particleCount="300" :force="1.0" :stageHeight="1000"/>
+    </div>
   </Dialog>
 </template>
 
 <script setup>
-import {ref, watch} from 'vue';
+import {nextTick, ref, watch} from 'vue';
+import ConfettiExplosion from "vue-confetti-explosion";
 
 const props = defineProps({
   topic: String,
   visible: Boolean,
+  done: Boolean,
   listening: Array
 });
 
-const emit = defineEmits(['closeDialog']);
+const emit = defineEmits(['closeDialog', 'dayCompleted']);
 const visible = ref(props.visible);
 
 const audioSrc = ref('');
 const currentAudioIndex = ref(0);
+const confettiVisible = ref(false);
 
 const audio = ref();
 const isPlaying = ref(false);
@@ -69,6 +79,7 @@ const progressPercentage = ref(0);
 const timeoutID = ref(null);
 
 const selectedOption = ref(null);
+const allDone = ref(false);
 
 watch(() => props.visible, (newVal) => {
   visible.value = newVal;
@@ -89,6 +100,10 @@ const closeDialog = () => {
   clearInterval(timeoutID.value);
   resetAudioValues();
   emit('closeDialog');
+};
+
+const dayCompleted = () => {
+  emit('dayCompleted');
 };
 
 const resetAudioValues = () => {
@@ -137,10 +152,18 @@ const stopAudio = () => {
 
 const checkAnswer = () => {
   if (selectedOption.value === props.listening[0].answer) {
-    alert('Correct Answer!');
+    explode()
+    allDone.value = true;
+    dayCompleted();
   } else {
     alert('Wrong Answer!');
   }
+};
+
+const explode = async () => {
+  confettiVisible.value = false;
+  await nextTick();
+  confettiVisible.value = true;
 };
 </script>
 
@@ -214,5 +237,11 @@ const checkAnswer = () => {
 
 .check-button {
   margin-top: 10px;
+}
+
+.confetti-container {
+  position: absolute;
+  right: 50%;
+  top: 50%;
 }
 </style>

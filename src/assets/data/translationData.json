@@ -1,7 +1,6 @@
 {
   "Everyday English": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0}
   ],
   "On the Road": [
     {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
@@ -15,7 +14,11 @@
     {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
     {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
   ],
-  "Idioms": [
+  "Idioms1": [
+    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
+    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+  ],
+  "Idioms2": [
     {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
     {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
   ],

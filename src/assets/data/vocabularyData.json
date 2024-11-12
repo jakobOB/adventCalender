@@ -28,7 +28,13 @@
     { "term": "Stylist", "translation": "Stylist" },
     { "term": "Scissors", "translation": "Schere" }
   ],
-  "Idioms": [
+  "Idioms1": [
+    { "term": "Break the ice", "translation": "Das Eis brechen" },
+    { "term": "Piece of cake", "translation": "Kinderspiel" },
+    { "term": "Hit the sack", "translation": "Ins Bett gehen" },
+    { "term": "Under the weather", "translation": "Unwohl" }
+  ],
+  "Idioms2": [
     { "term": "Break the ice", "translation": "Das Eis brechen" },
     { "term": "Piece of cake", "translation": "Kinderspiel" },
     { "term": "Hit the sack", "translation": "Ins Bett gehen" },

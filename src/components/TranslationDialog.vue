@@ -8,10 +8,10 @@
     <div class="dialog-container">
       <h3 class="dialog-title">{{ topic }}</h3>
       <h4 class="dialog-subtitle">Translation</h4>
-      <p v-if="!allDone" class="dialog-description">Drag the words in corrects order into the box.</p>
+      <p v-if="!done" class="dialog-description">Drag the words in corrects order into the box.</p>
 
       <!-- Draggable Container -->
-      <div v-if="!allDone" class="sentence-builder">
+      <div v-if="!done" class="sentence-builder">
         <div class="sentence-progress">
           <span>Finished Sentences:</span>
           <span class="progress-count">{{ currentTranslationIndex }} / {{ translations.length }}</span>
@@ -70,8 +70,6 @@
       <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />
       <Button label="Check" icon="pi pi-check" @click="checkAnswer" class="p-button-rounded p-button-success close-button check-button" />
     </div>
-<!--    <Button label="Close" icon="pi pi-times" @click="closeDialog" class="p-button-rounded p-button-danger close-button" />-->
-<!--    <Button label="Check Sentence" icon="pi pi-check" @click="checkAnswer" class="p-button-rounded p-button-success check-button" />-->
     <div class="confetti-container">
       <ConfettiExplosion v-if="confettiVisible" :duration="2000" :particleCount="300" :force="1.0" :stageHeight="1000"/>
     </div>
@@ -87,6 +85,7 @@ const props = defineProps({
   translations: Array,
   topic: String,
   visible: Boolean,
+  done: Boolean
 });
 
 const draggable = VueDraggableNext;

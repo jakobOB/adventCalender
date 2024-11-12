@@ -20,19 +20,23 @@
         :sentences="sentenceList"
         :words="sentenceWordList"
         :topic="selectedTopic"
+        :done="localStorageService.getData('doorsOpened') >= day"
+        @closeDialog="closeDialog"
+        @dayCompleted="dayCompleted"
+    />
+    <TranslationDialog
+        :visible="isTranslationDay"
+        :topic="selectedTopic"
+        :translations="translationSentences"
+        :done="localStorageService.getData('doorsOpened') >= day"
         @closeDialog="closeDialog"
         @dayCompleted="dayCompleted"
     />
     <ListeningDialog
         :visible="isListeningDay"
         :topic="selectedTopic"
-        :listening="listeningList"
-        @closeDialog="closeDialog"
-    />
-    <TranslationDialog
-        :visible="isTranslationDay"
-        :topic="selectedTopic"
-        :translations="translationSentences"
+        :listening="listeningData"
+        :done="localStorageService.getData('doorsOpened') >= day"
         @closeDialog="closeDialog"
         @dayCompleted="dayCompleted"
     />
@@ -74,14 +78,17 @@ const sentenceWordList = ref([]);
 const allTranslationData = ref([]);
 const translationSentences = ref([]);
 // Listening data
-const listeningList = ref([]);
+const allListeningData = ref([]);
+const listeningData = ref([]);
 
 const openDialog = () => {
   // check if current date is < props.day,  only get the day if it is less than or equal to the current date
   let doorsOpened = localStorageService.getData('doorsOpened');
-  if (props.day > new Date().getDate() || props.day-1 !== doorsOpened) {
+  console.log(doorsOpened);
+  if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
-    // return;
+    console.log('You cannot open this door yet');
+    return;
   }
 
   const exercise = getExercise(props.day);
@@ -104,7 +111,8 @@ const openDialog = () => {
   else if (exercise === 'Listening') {
     isListeningDay.value = true;
     selectedTopic.value = getTopic(props.day);
-    listeningList.value = localStorageService.getData(exercise)[selectedTopic.value];
+    allListeningData.value = localStorageService.getData(exercise);
+    listeningData.value = allListeningData.value[selectedTopic.value];
   }
   else if (exercise === 'Translation') {
     isTranslationDay.value = true;
@@ -122,6 +130,9 @@ const closeDialog = () => {
 };
 
 const getExercise = (day) => {
+  if(day === 18) return "Translation"
+  if(day === 19) return "Vocabulary"
+  if(day === 20) return "Translation"
   const exercises = ["Vocabulary", "Sentence Completion", "Translation", "Listening"];
   return exercises[(day - 1) % 4];
 };
@@ -131,13 +142,16 @@ const getTopic = (day) => {
   if (day >= 5 && day <= 8) return 'On the Road';
   if (day >= 9 && day <= 12) return 'In the Hospital';
   if (day >= 13 && day <= 16) return 'At the Hair saloon';
-  if (day >= 17 && day <= 20) return 'Idioms';
+  if (day >= 17 && day <= 18) return 'Idioms1';
+  if (day >= 19 && day <= 20) return 'Idioms2';
   if (day >= 21 && day <= 24) return 'Holidays';
 };
 
 const dayCompleted = () => {
   doorOpen.value = true;
-  localStorageService.storeData('doorsOpened', props.day);
+  let doorsOpened = localStorageService.getData('doorsOpened');
+  if (props.day > doorsOpened)
+    localStorageService.storeData('doorsOpened', props.day);
 };
 
 // Watch for changes in the sentence list and store the data in local storage
@@ -151,6 +165,11 @@ watch(translationSentences, (newVal) => {
   allTranslationData.value[selectedTopic.value] = newVal;
   localStorageService.storeData('Translation', allTranslationData.value);
 }, { deep: true });
+
+watch(listeningData, (newVal) => {
+  allListeningData.value[selectedTopic.value] = newVal;
+  localStorageService.storeData('Listening', allListeningData.value);
+}, { deep: true });
 </script>
 
 <style scoped>
@@ -160,7 +179,6 @@ watch(translationSentences, (newVal) => {
   justify-content: center;
   align-items: center;
 }
-
 
 .advent-card {
   width: 150px;
