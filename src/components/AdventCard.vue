@@ -88,7 +88,7 @@ const openDialog = () => {
   if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
     console.log('You cannot open this door yet');
-    return;
+    // return;
   }
 
   const exercise = getExercise(props.day);

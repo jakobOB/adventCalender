@@ -1,10 +1,10 @@
 {
   "Everyday English": [
     {
-      "file":  "audio1.mp3",
+      "file":  "1.mp4",
       "question": "What is one concern that the first woman shares at the beginning of the conversation?",
       "options": [
-        "She is thinking about changing her job.\n",
+        "She is thinking about changing her job.",
         "She feels overwhelmed by the responsibilities of being a mom.",
         "She plans to take a long vacation.",
         "She wants to spend more time cooking meals."
@@ -14,60 +14,52 @@
   ],
   "On the Road": [
     {
-      "file":  "audio1.mp3",
+      "file":  "2.mp4",
+      "question": "What is the person asking for?",
       "options": [
-        "First Audio text",
-        "Second Audio text",
-        "Third Audio text",
-        "Fourth Audio text"
+        "A restaurant reservation",
+        "Information about local attractions",
+        "Directions to the hotel",
+        "A reservation for a room"
       ],
-      "answer": 0
+      "answer": 3
     }
   ],
   "In the Hospital": [
     {
-      "file":  "audio1.mp3",
+      "file":  "3.mp4",
+      "question": "What symptom does the patient mention to the nurse?",
       "options": [
-        "First Audio text",
-        "Second Audio text",
-        "Third Audio text",
-        "Fourth Audio text"
+        "A headache",
+        "Stomach ache",
+        "Back pain",
+        "Sore throat"
       ],
-      "answer": 0
+      "answer": 1
     }
   ],
   "At the Hair saloon": [
     {
-      "file":  "audio1.mp3",
+      "file":  "4.mp4",
+      "question": "What specific cut does the customer request?",
       "options": [
-        "First Audio text",
-        "Second Audio text",
-        "Third Audio text",
-        "Fourth Audio text"
+        "A short bob style",
+        "A full haircut with bangs",
+        "A trim with split ends cut and layering",
+        "A pixie cut with highlights"
       ],
-      "answer": 0
-    }
-  ],
-  "Idioms": [
-    {
-      "file":  "audio1.mp3",
-      "options": [
-        "First Audio text",
-        "Second Audio text",
-        "Third Audio text",
-        "Fourth Audio text"
-      ],
-      "answer": 0
+      "answer": 2
     }
   ],
   "Holidays": [
     {
-      "file":  "audio1.mp3",
+      "file":  "5.mp4",
+      "question": "What did person B make at home this year?",
       "options": [
-        "First Audio text",
-        "Second Audio text",
-        "Third Audio text",
-        "Fourth Audio text"
+        "Eggnog",
+        "Christmas cookies",
+        "A gingerbread house",
+        "Hot chocolate"
       ],
       "answer": 0
     }

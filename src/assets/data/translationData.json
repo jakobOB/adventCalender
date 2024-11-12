@@ -1,29 +1,69 @@
 {
   "Everyday English": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0}
+    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog.", "valid": 0},
+    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0},
+    {"german": "Ich fühle mich heute nicht ganz fit und bleibe lieber zu Hause.", "english": "I’m feeling a bit under the weather today, I will probably stay at home.", "valid": 0},
+    {"german": "Ich wertschätze deine Unterstützung in dieser schwierigen Zeit.", "english": "I appreciate your support during this difficult time.", "valid": 0},
+    {"german": "Ich habe am Wochenende frei und würde gerne mit dir ausgehen.", "english": "I am free this weekend and would love to go out with you.", "valid": 0},
+    {"german": "Er beschwert sich ständig über seinen Job.", "english": "He constantly complains about his job.", "valid": 0},
+    {"german": "Wenn du zu spät kommst, macht nichts; wir warten auf dich.", "english": "If you’re late, no worries; we will wait for you.", "valid": 0}
   ],
   "On the Road": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Ich brauche eine Empfehlung für einen Ort, an dem ich Frühstück essen kann.", "english": "I would need a recommendation for a place where I can have breakfast.", "valid": 0},
+    {"german": "Wie viel kostet die Fahrkarte für die ganze Familie?", "english": "How much is the ticket for the whole family?", "valid": 0},
+    {"german": "Madame, könnten Sie mir bitte den Weg zur nächsten U-Bahn-Station zeigen?", "english": "Madame, could you please show me the way to the nearest metro station?", "valid": 0},
+    {"german": "Sie sollten genügend Bargeld mitnehmen, falls Sie keinen Geldautomaten finden.", "english": "You should take enough cash in case you can't find an ATM.", "valid": 0},
+    {"german": "Wie lange dauert es, um zum Strand zu gelangen?", "english": "How long does it take to get to the beach?", "valid": 0},
+    {"german": "Sie können die Tickets direkt im Bus buchen.", "english": "You can book the tickets directly in the bus.", "valid": 0}
   ],
   "In the Hospital": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Sie sehen krank aus; lassen Sie mich Ihre Temperatur überprüfen.", "english": "You look sick; let me check your temperature.", "valid": 0},
+    {"german": "Können Sie mir sagen, wie ich zur Apotheke komme?", "english": "Can you tell me how to get to the pharmacy?", "valid": 0},
+    {"german": "Ich glaube, ich habe die Grippe. Ich fühle mich schwach und habe Fieber.", "english": "I think I have the flu. I feel weak and have a fever.", "valid": 0},
+    {"german": "Ich muss jetzt Ihren Blutdruck messen.", "english": "I need to measure your blood pressure now.", "valid": 0},
+    {"german": "Sind Sie allergisch gegen irgendwelche Medikamente?", "english": "Are you allergic to any medications?", "valid": 0},
+    {"german": "Hier ist Ihr Rezept; denken Sie daran, es wie angegeben einzunehmen.", "english": "Here’s your prescription; remember to take it as directed.", "valid": 0},
+    {"german": "Meine Nase rinnt. Ich glaube, ich habe mir eine Erkältung eingefangen.", "english": "I have a runny nose. I think I caught a cold.", "valid": 0},
+    {"german": "Ich brauche wirklich ein Schmerzmittel für meine Kopfschmerzen.", "english": "I really need a pain killer for my headache.", "valid": 0},
+    {"german": "Ich habe einen Krankenwagen gerufen, weil ich starke Schmerzen hatte.", "english": "I called an ambulance because I was in severe pain.", "valid": 0}
   ],
   "At the Hair saloon": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Deine Ansätze sind sichtbar; möchtest du sie nachfärben?", "english": "Your roots are coming through; would you like to touch them up?", "valid": 0},
+    {"german": "Nach dem Schnitt werde ich dir eine schöne Wäsche und Föhnfrisur machen.", "english": "After the cut, I’ll give you a nice wash and blow-dry.", "valid": 0},
+    {"german": "Wenn du mehr Volumen möchtest, könnte eine Dauerwelle eine gute Option sein.", "english": "If you want more volume, a perm could be a great option.", "valid": 0},
+    {"german": "Für die Hochzeit am Wochenende könnten wir dein Haar einflechten. Was hälst du davon?", "english": "For the wedding this weekend, we could braid your hair. What do you think?", "valid": 0},
+    {"german": "Ich bin mir nicht sicher, ob ich mein Haar färben oder natürlich lassen soll; was empfiehlst du?", "english": "I’m not sure whether to dye my hair or keep it natural; what do you recommend?", "valid": 0},
+    {"german": "Ich interessiere mich für einen stufigen Schnitt, um meinem feinen Haar mehr Volumen zu verleihen.", "english": "I’m interested in a layered cut to add some volume to my fine hair.", "valid": 0}
   ],
   "Idioms1": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Wenn du den Marathon laufen willst, musst du dich zusammenreißen und härter arbeiten.", "english": "If you want to run the marathon, you need to get your act together and work harder.", "valid": 0},
+    {"german": "Alles Gute nachträglich zum Geburtstag! Besser spät als nie!", "english": "Happy late birthday. Better late than never!", "valid": 0},
+    {"german": "Ich war in letzter Zeit sehr gestresst, bitte gewähr mir etwas Nachsicht.", "english": "I’ve been really stressed lately, please cut me some slack.", "valid": 0},
+    {"german": "Wir müssen den Elefanten im Raum ansprechen und über unseren Streit sprechen.", "english": "We need to address the elephant in the room and talk about our fight.", "valid": 0},
+    {"german": "Du hast heute Abend eine große Aufführung; Hals- und Beinbruch!", "english": "You have a big performance tonight; break a leg!", "valid": 0},
+    {"german": "Nach zehn Stunden Arbeit habe ich beschlossen, nach Hause zu gehen.", "english": "After working for ten hours, I decided to call it a day.", "valid": 0},
+    {"german": "Wir haben gerade über Kurt gesprochen, und wenn man vom Teufel spricht, kommt er schon!", "english": "We were just talking about Kurt, and speak of the devil, here he comes!", "valid": 0},
+    {"german": "Die Prüfung war ein Kinderspiel; ich habe sie in einer halben Stunde fertiggestellt.", "english": "The exam was a piece of cake; I finished it in half an hour.", "valid": 0}
   ],
   "Idioms2": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Trotz unserer Unterschiede haben wir es geschafft, uns in dieser Angelegenheit einig zu sein.", "english": "Despite our differences, we managed to see eye to eye on this matter.", "valid": 0},
+    {"german": "Wir sollten drinnen bleiben; es regnet in Strömen draußen.", "english": "We should stay inside; it's raining cats and dogs outside.", "valid": 0},
+    {"german": "Sie hat versehentlich alles verraten, was die Überraschungsparty betrifft.", "english": "She accidentally let the cat out of the bag about the surprise party.", "valid": 0},
+    {"german": "Ich weiß, du bist enttäuscht, aber denk daran, nach dem Regen kommt der Sonnenschein!", "english": "I know you’re disappointed, but remember, every cloud has a silver lining!", "valid": 0},
+    {"german": "Unser Lebensstil ist zu verschieden; das ist, als ob man Äpfel mit Birnen vergleicht.", "english": "Our lifestyle is too different; it's like comparing apples to oranges.", "valid": 0},
+    {"german": "Ich habe meine Brieftasche verloren, aber was passiert ist, ist passiert.", "english": "I lost my wallet, but there's no use crying over spilt milk.", "valid": 0},
+    {"german": "Ich habe vermutet, dass sie Freunde sind; Gleich und Gleich gesellt sich gern.", "english": "I assumed that they are friends; birds of a feather flock together.", "valid": 0},
+    {"german": "Ich weiß, es ist gerade hart, aber halte durch; es wird besser werden.", "english": "I know it's tough right now, but hang in there; things will get better.", "valid": 0}
   ],
   "Holidays": [
-    {"german": "Ich mache mir Sorgen um meinen Hund.", "english": "I am worried about my dog", "valid": 0},
-    {"german": "Du kannst mich jederzeit anrufen, wenn du Hilfe brauchst.", "english": "You can call me anytime if you need help.", "valid": 0}
+    {"german": "Lasst uns auf das neue Jahr anstoßen!", "english": "Let’s make a toast to the new year!", "valid": 0},
+    {"german": "Am Tag vor Weihnachten haben wir es endlich geschafft, den Christbaumschmuck aufzuhängen!", "english": "The day before Christmas we finally managed to hang the ornaments on the tree!", "valid": 0},
+    {"german": "Für die Kinder ist der spannendste Teil von Ostern die Ostereiersuche.", "english": "For the children, the most exciting part about Easter is the egg hunt.", "valid": 0},
+    {"german": "Hast du dir Vorsätze für das neue Jahr vorgenommen?", "english": "Did you make resolutions for the new year?", "valid": 0},
+    {"german": "Es ist Tradition, sich unter dem Mistelzweig zu küssen.", "english": "It is a tradition to kiss under the mistletoe.", "valid": 0},
+    {"german": "Meine Mutter liebt es, nach dem Weihnachtsessen einen Eierlikör zu trinken.", "english": "After Christmas Dinner, my mom loves to drink eggnog.", "valid": 0},
+    {"german": "Vor Weihnachten werde ich mir einen Tag frei nehmen, um alle Vorbereitungen zu treffen.", "english": "Before Christmas I am taking a day off to get all the preparations done.", "valid": 0},
+    {"german": "Als Kinder gingen wir in der Nachbarschaft von Haus zu Haus Weihnachtslieder singen.", "english": "As kids, we used to go carolling from house to house in the neighborhood.", "valid": 0},
+    {"german": "Dieses Jahr werden wir Silvester mit Freunden in den Bergen feiern!", "english": "This year, we will celebrate New Year’s Eve with friends in the mountains!", "valid": 0}
   ]
 }

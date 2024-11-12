@@ -56,18 +56,17 @@ const santaText = {
       "remember that progress comes step by step! We’re proud of you and all that you’ve accomplished! Merry Christmas!"
 }
 
-
 const localStorageService = new LocalStorageService();
 const isTalking = ref(false);
 const day = ref(1)
 
-const doorsOpened = localStorageService.getData("doorsOpened") || [];
+const doorsOpened = localStorageService.getData("doorsOpened") || 0;
 
 const text = ref('');
 
 const resetCalendar = () => {
   localStorageService.clearLocalStorage();
-  doorsOpened.value = [];
+  doorsOpened.value = 0;
 };
 
 // TODO: Implement the toggleTalking function depending on the day

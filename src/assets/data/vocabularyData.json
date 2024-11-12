@@ -1,49 +1,80 @@
 {
   "Everyday English": [
-    { "term": "Hello", "translation": "Hallo" },
-    { "term": "Worry, worries", "translation": "Sorgen" },
-    { "term": "Under the weather", "translation": "Unwohl" },
-    { "term": "Never mind", "translation": "Macht nichts" },
-    { "term": "To appreciate", "translation": "Schätzen" },
-    { "term": "To be free", "translation": "Frei sein" },
-    { "term": "To complain", "translation": "Sich beschweren" },
-    { "term": "To grab something", "translation": "Etwas greifen" },
-    { "term": "To starve", "translation": "Verhungern" }
+    { "term": "Worry, worries", "translation": "Sorge, Sorgen" },
+    { "term": "Anytime", "translation": "jederzeit" },
+    { "term": "Under the weather", "translation": "nicht ganz fit" },
+    { "term": "Never mind!", "translation": "Macht nichts!" },
+    { "term": "To appreciate", "translation": "wertschätzen" },
+    { "term": "To be free", "translation": "frei haben" },
+    { "term": "To complain", "translation": "beschweren" },
+    { "term": "To grab something", "translation": "etwas schnappen" },
+    { "term": "To starve", "translation": "hungern" }
   ],
   "On the Road": [
-    { "term": "Car", "translation": "Auto" },
-    { "term": "Traffic", "translation": "Verkehr" },
-    { "term": "Highway", "translation": "Autobahn" },
-    { "term": "Gas station", "translation": "Tankstelle" }
+    { "term": "Reservation", "translation": "Eine Reservierung" },
+    { "term": "Bus/metro station", "translation": "Bushaltestelle / U-Bahn-Station" },
+    { "term": "To get (somewhere)", "translation": "irgendwo hin kommen" },
+    { "term": "To book", "translation": "buchen" },
+    { "term": "Sir/Madame", "translation": "Herr / Dame" },
+    { "term": "Gas station", "translation": "Tankstelle" },
+    { "term": "Recommendation", "translation": "Empfehlung" },
+    { "term": "How much?", "translation": "Wie viel?" },
+    { "term": "Cash", "translation": "Bargeld" }
   ],
   "In the Hospital": [
-    { "term": "Doctor", "translation": "Arzt" },
-    { "term": "Nurse", "translation": "Krankenschwester" },
-    { "term": "Surgery", "translation": "Operation" },
-    { "term": "Medicine", "translation": "Medizin" }
+    { "term": "Pain/ache", "translation": "Schmerz" },
+    { "term": "Ill/sick", "translation": "Krank" },
+    { "term": "Blood pressure", "translation": "Blutdruck" },
+    { "term": "Flu", "translation": "Grippe" },
+    { "term": "Cold", "translation": "Erkältung" },
+    { "term": "Allergic", "translation": "Allergisch" },
+    { "term": "Ambulance", "translation": "Krankenwagen" },
+    { "term": "Painkiller", "translation": "Schmerzmittel" },
+    { "term": "Pharmacy, drugstore", "translation": "Apotheke" },
+    { "term": "Prescription", "translation": "Rezept" }
   ],
   "At the Hair saloon": [
-    { "term": "Haircut", "translation": "Haarschnitt" },
-    { "term": "Shampoo", "translation": "Shampoo" },
-    { "term": "Stylist", "translation": "Stylist" },
-    { "term": "Scissors", "translation": "Schere" }
+    { "term": "Parting", "translation": "Scheitel" },
+    { "term": "Sideburns", "translation": "Koteletten" },
+    { "term": "Cut/Trim", "translation": "schneiden/kürzen" },
+    { "term": "Perm", "translation": "Dauerwelle" },
+    { "term": "Wash & blow-dry", "translation": "Waschen und Föhnen" },
+    { "term": "Layered", "translation": "Stufig" },
+    { "term": "Split ends", "translation": "Spliss" },
+    { "term": "Dye/tone", "translation": "färben/tönen" },
+    { "term": "Roots", "translation": "Ansatz" },
+    { "term": "Braid", "translation": "flechten" }
   ],
   "Idioms1": [
-    { "term": "Break the ice", "translation": "Das Eis brechen" },
-    { "term": "Piece of cake", "translation": "Kinderspiel" },
-    { "term": "Hit the sack", "translation": "Ins Bett gehen" },
-    { "term": "Under the weather", "translation": "Unwohl" }
+    { "term": "Speak of the devil", "translation": "Wenn man vom Teufel spricht." },
+    { "term": "A piece of cake", "translation": "Ein Kinderspiel." },
+    { "term": "Break a leg", "translation": "Hals- und Beinbruch." },
+    { "term": "Call it a day", "translation": "Den Tag beenden." },
+    { "term": "The elephant in the room", "translation": "Der Elefant im Raum." },
+    { "term": "Better late than never", "translation": "Besser spät als nie." },
+    { "term": "Cut somebody some slack", "translation": "Jemandem etwas Nachsicht gewähren." },
+    { "term": "Get your act together", "translation": "Reiß dich zusammen." }
   ],
   "Idioms2": [
-    { "term": "Break the ice", "translation": "Das Eis brechen" },
-    { "term": "Piece of cake", "translation": "Kinderspiel" },
-    { "term": "Hit the sack", "translation": "Ins Bett gehen" },
-    { "term": "Under the weather", "translation": "Unwohl" }
+    { "term": "Hang in there", "translation": "Durchhalten!" },
+    { "term": "Birds of a feather flock together", "translation": "Gleich und Gleich gesellt sich gern." },
+    { "term": "Comparing apples to oranges", "translation": "Äpfel mit Birnen vergleichen." },
+    { "term": "Don't cry over spilt milk", "translation": "Was passiert ist, ist passiert." },
+    { "term": "Every cloud has a silver lining", "translation": "Nach dem Regen kommt der Sonnenschein." },
+    { "term": "It's raining cats and dogs", "translation": "Es regnet in Strömen." },
+    { "term": "Let the cat out of the bag", "translation": "Die Katze aus dem Sack lassen." },
+    { "term": "To see eye to eye", "translation": "Sich einig sein." }
   ],
   "Holidays": [
-    { "term": "Christmas", "translation": "Weihnachten" },
-    { "term": "Easter", "translation": "Ostern" },
-    { "term": "New Year", "translation": "Neujahr" },
-    { "term": "Thanksgiving", "translation": "Erntedankfest" }
+    { "term": "Ornament", "translation": "Christbaumschmuck" },
+    { "term": "Carolling", "translation": "Weihnachtslieder singen" },
+    { "term": "Eggnog", "translation": "Eierlikör" },
+    { "term": "Mistletoe", "translation": "Mistelzweig" },
+    { "term": "New Year’s Eve", "translation": "Silvester" },
+    { "term": "Resolutions", "translation": "Vorsätze" },
+    { "term": "Toast", "translation": "Anstoßen" },
+    { "term": "Easter Friday/Good Friday", "translation": "Karfreitag" },
+    { "term": "Egg Hunt", "translation": "Ostereiersuche" },
+    { "term": "Day off", "translation": "freier Tag" }
   ]
 }

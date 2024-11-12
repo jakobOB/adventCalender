@@ -30,6 +30,7 @@
         <!-- Single Choice Questions -->
         <div class="questions-container">
           <p style="font-weight: bold">{{listening[0].question}}</p>
+          <p v-if="wrongAnswer" style="color: red">I'm sorry, but this was not correct.</p>
           <div v-for="(option, idx) in listening[0].options" :key="idx" class="option">
             <input type="radio" :id="`option-${idx}`" :value="idx" v-model="selectedOption" />
             <label :for="`option-${idx}`">{{ option }}</label>
@@ -77,6 +78,8 @@ const currentTime = ref(0);
 const duration = ref(0);
 const progressPercentage = ref(0);
 const timeoutID = ref(null);
+
+const wrongAnswer = ref(false);
 
 const selectedOption = ref(null);
 const allDone = ref(false);
@@ -153,10 +156,11 @@ const stopAudio = () => {
 const checkAnswer = () => {
   if (selectedOption.value === props.listening[0].answer) {
     explode()
+    wrongAnswer.value = false;
     allDone.value = true;
     dayCompleted();
   } else {
-    alert('Wrong Answer!');
+    wrongAnswer.value = true;
   }
 };
 
