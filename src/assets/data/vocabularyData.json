@@ -1,14 +1,14 @@
 {
   "Everyday English": [
-    { "term": "Worry, worries", "translation": "Sorge, Sorgen" },
-    { "term": "Anytime", "translation": "jederzeit" },
-    { "term": "Under the weather", "translation": "nicht ganz fit" },
-    { "term": "Never mind!", "translation": "Macht nichts!" },
-    { "term": "To appreciate", "translation": "wertschätzen" },
-    { "term": "To be free", "translation": "frei haben" },
-    { "term": "To complain", "translation": "beschweren" },
-    { "term": "To grab something", "translation": "etwas schnappen" },
-    { "term": "To starve", "translation": "hungern" }
+    { "term": "Worry, worries", "translation": "Sorge, Sorgen", "matched": "" },
+    { "term": "Anytime", "translation": "jederzeit", "matched": "" },
+    { "term": "Under the weather", "translation": "nicht ganz fit", "matched": "" },
+    { "term": "Never mind!", "translation": "Macht nichts!", "matched": "" },
+    { "term": "To appreciate", "translation": "wertschätzen", "matched": "" },
+    { "term": "To be free", "translation": "frei haben", "matched": "" },
+    { "term": "To complain", "translation": "beschweren", "matched": "" },
+    { "term": "To grab something", "translation": "etwas schnappen", "matched": "" },
+    { "term": "To starve", "translation": "hungern", "matched": "" }
   ],
   "On the Road": [
     { "term": "Reservation", "translation": "Eine Reservierung" },

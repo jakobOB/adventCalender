@@ -70,6 +70,7 @@ const isTranslationDay = ref(false);
 
 const selectedTopic = ref('');
 // Vocabulary data
+const allVocabularyData = ref([]);
 const vocabularyList = ref([]);
 // Sentence data
 const allSentenceData = ref([]);
@@ -87,7 +88,7 @@ const openDialog = async () => {
   let doorsOpened = localStorageService.getData('doorsOpened');
   if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
-    return;
+    // return;
   }
 
   // Prevent opening the door if Santa is talking
@@ -99,7 +100,8 @@ const openDialog = async () => {
   if (exercise === 'Vocabulary') {
     isVocabularyDay.value = true;
     selectedTopic.value = getTopic(props.day);
-    vocabularyList.value = localStorageService.getData(exercise)[selectedTopic.value];
+    allVocabularyData.value = localStorageService.getData(exercise);
+    vocabularyList.value = allVocabularyData.value[selectedTopic.value];
   }
   else if (exercise === 'Sentence Completion') {
     isSentenceDay.value = true;
@@ -157,20 +159,11 @@ const dayCompleted = () => {
     localStorageService.storeData('doorsOpened', props.day);
 };
 
-const waitForDialogReady = () => {
-  return new Promise((resolve) => {
-    const unwatch = watch(
-        () => props.santaSpeaks,
-        (newVal, oldVal) => {
-          if (!newVal && oldVal) {
-            resolve(); // Resolve when talking ends
-            unwatch(); // Stop watching
-          }
-        },
-        { immediate: true } // Trigger for non-speaking days
-    );
-  });
-};
+
+watch(vocabularyList, (newVal) => {
+  allVocabularyData.value[selectedTopic.value] = newVal;
+  localStorageService.storeData('Vocabulary', allVocabularyData.value);
+}, { deep: true });
 
 // Watch for changes in the sentence list and store the data in local storage
 watch(sentenceList, (newVal) => {
