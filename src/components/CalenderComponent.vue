@@ -1,10 +1,15 @@
 <template>
   <div class="calendar-wrapper">
-    <button @click="toggleTalking">Toggle Talking</button>
     <div class="calendar-body" :class="isTalking ? 'overlay' : ''">
       <button @click="resetCalendar">Reset Calendar</button>
       <div class="advent-card-grid">
-        <AdventCard v-for="day in 24" :key="day" :day="day" :isOpened="day<=doorsOpened"/>
+        <AdventCard
+            v-for="day in 24"
+            :key="day"
+            :day="day"
+            :isOpened="day<=doorsOpened"
+            :santaSpeaks="toggleTalking"
+        />
       </div>
     </div>
 
@@ -36,7 +41,7 @@ const santaText = {
   "9": "Hi there!<br/> New day, new chapter! Are you ready to explore the English language further?<br/> " +
       "This time, we’ll focus on more specific vocabulary. We’ll learn new words and phrases that may be useful" +
       " when visiting a hospital.<br/> Let’s see how many of these you’re already familiar with!<br/> Let’s get started!",
-  "13": "Hi there!<br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
+  "15": "Hi there!<br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
       "the Hair Salon!<br/> Who doesn’t enjoy treating themselves to a beautiful haircut from time to time?<br/> In the coming days, " +
       "you’ll learn how to express yourself at the salon, ensuring you get exactly what you want!<br/> Let’s get started!",
   "17": "As Christmas approaches, your English skills are improving every day! This new chapter may seem a bit challenging at first, " +
@@ -58,7 +63,6 @@ const santaText = {
 
 const localStorageService = new LocalStorageService();
 const isTalking = ref(false);
-const day = ref(1)
 
 const doorsOpened = localStorageService.getData("doorsOpened") || 0;
 
@@ -69,15 +73,18 @@ const resetCalendar = () => {
   doorsOpened.value = 0;
 };
 
-// TODO: Implement the toggleTalking function depending on the day
-const toggleTalking = () => {
-  isTalking.value = !isTalking.value;
+const toggleTalking = async (santaDay) => {
+  let dayCheck = localStorageService.getData("santaDays");
 
-  if (isTalking.value) {
-    text.value = santaText[day.value];
-    day.value += 4;
+  if(!isTalking.value && dayCheck < santaDay && santaText.hasOwnProperty(santaDay)){
+    text.value = santaText[santaDay];
+    isTalking.value = true;
+  } else {
+    isTalking.value = false;
+    text.value = '';
+    localStorageService.storeData("santaDays", santaDay);
   }
-
+  return isTalking.value;
 };
 </script>
 

@@ -54,7 +54,8 @@ import { LocalStorageService } from "@/service/storageservice.js";
 
 const props = defineProps({
   day: Number,
-  isOpened: Boolean
+  isOpened: Boolean,
+  santaSpeaks: Function
 });
 
 const localStorageService = new LocalStorageService();
@@ -81,15 +82,17 @@ const translationSentences = ref([]);
 const allListeningData = ref([]);
 const listeningData = ref([]);
 
-const openDialog = () => {
+const openDialog = async () => {
   // check if current date is < props.day,  only get the day if it is less than or equal to the current date
   let doorsOpened = localStorageService.getData('doorsOpened');
-  console.log(doorsOpened);
   if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
-    console.log('You cannot open this door yet');
     // return;
   }
+
+  // Prevent opening the door if Santa is talking
+  const isTalking = await props.santaSpeaks(props.day);
+  if (isTalking) return;
 
   const exercise = getExercise(props.day);
 
@@ -152,6 +155,21 @@ const dayCompleted = () => {
   let doorsOpened = localStorageService.getData('doorsOpened');
   if (props.day > doorsOpened)
     localStorageService.storeData('doorsOpened', props.day);
+};
+
+const waitForDialogReady = () => {
+  return new Promise((resolve) => {
+    const unwatch = watch(
+        () => props.santaSpeaks,
+        (newVal, oldVal) => {
+          if (!newVal && oldVal) {
+            resolve(); // Resolve when talking ends
+            unwatch(); // Stop watching
+          }
+        },
+        { immediate: true } // Trigger for non-speaking days
+    );
+  });
 };
 
 // Watch for changes in the sentence list and store the data in local storage

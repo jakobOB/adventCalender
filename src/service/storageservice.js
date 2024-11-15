@@ -24,6 +24,10 @@ export class LocalStorageService {
         if (!localStorage.getItem('doorsOpened')) {
             localStorage.setItem('doorsOpened', '0');
         }
+
+        if (!localStorage.getItem('santaDays')) {
+         localStorage.setItem('santaDays', '0');
+        }
     }
 
     clearLocalStorage() {

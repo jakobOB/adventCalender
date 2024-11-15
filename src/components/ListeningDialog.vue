@@ -120,7 +120,6 @@ const resetAudioValues = () => {
 const loadAudio = () => {
   if (currentAudioIndex.value < props.listening.length) {
     audioSrc.value = `./audio/${props.listening[currentAudioIndex.value].file}`;
-    // audioSrc.value = `/src/assets/data/audio/${props.listening[currentAudioIndex.value].file}`;
   }
 };
 
