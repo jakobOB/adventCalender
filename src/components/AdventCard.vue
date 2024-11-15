@@ -87,7 +87,7 @@ const openDialog = async () => {
   let doorsOpened = localStorageService.getData('doorsOpened');
   if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
-    // return;
+    return;
   }
 
   // Prevent opening the door if Santa is talking
