@@ -105,6 +105,8 @@ watch(() => props.visible, (newVal) => {
   if(newVal) {
     // only get the words where the matched property is false
     germanWords.value = props.vocabulary.filter(word => !word.matched).map(word => word.translation);
+    // shuffle the words
+    germanWords.value = germanWords.value.sort(() => Math.random() - 0.5);
   }
 });
 

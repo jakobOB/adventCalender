@@ -86,9 +86,9 @@ const listeningData = ref([]);
 const openDialog = async () => {
   // check if current date is < props.day,  only get the day if it is less than or equal to the current date
   let doorsOpened = localStorageService.getData('doorsOpened');
-  if (props.day > new Date().getDate() || props.day > doorsOpened + 1) {
+  if (props.day > new Date().getDate()|| props.day > doorsOpened + 1) {
     // TODO: uncomment the line below to prevent opening the door before the day
-    return;
+    // return;
   }
 
   // Prevent opening the door if Santa is talking
@@ -132,6 +132,11 @@ const closeDialog = () => {
   isSentenceDay.value = false;
   isListeningDay.value = false;
   isTranslationDay.value = false;
+
+  let opened = localStorageService.getData('doorsOpened', props.day);
+  if(props.day === 24 && opened === 24) {
+    const isTalking = props.santaSpeaks(25);
+  }
 };
 
 const getExercise = (day) => {

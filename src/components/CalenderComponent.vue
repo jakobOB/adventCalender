@@ -41,7 +41,7 @@ const santaText = {
   "9": "Hi there!<br/> New day, new chapter! Are you ready to explore the English language further?<br/> " +
       "This time, we’ll focus on more specific vocabulary. We’ll learn new words and phrases that may be useful" +
       " when visiting a hospital.<br/> Let’s see how many of these you’re already familiar with!<br/> Let’s get started!",
-  "15": "Hi there!<br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
+  "13": "Hi there!<br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
       "the Hair Salon!<br/> Who doesn’t enjoy treating themselves to a beautiful haircut from time to time?<br/> In the coming days, " +
       "you’ll learn how to express yourself at the salon, ensuring you get exactly what you want!<br/> Let’s get started!",
   "17": "As Christmas approaches, your English skills are improving every day! This new chapter may seem a bit challenging at first, " +
@@ -56,7 +56,7 @@ const santaText = {
       "We’ll explore useful words and phrases related to holidays throughout the year. What are some specific Italian holidays? " +
       "Which days hold significance during Easter? And, of course, we’ll cover all the essential vocabulary for Christmas! " +
       "Are you ready for one last ride?",
-  "24": "Congratulations! You did it! You've successfully completed your advent calendar and can now consider yourself a true English pro! " +
+  "25": "Congratulations! You did it! You've successfully completed your advent calendar and can now consider yourself a true English pro! " +
       "I’m confident that you can engage in conversations with ease and feel more confident speaking English. While there’s still much to learn, " +
       "remember that progress comes step by step! We’re proud of you and all that you’ve accomplished! Merry Christmas!"
 }
@@ -75,6 +75,11 @@ const resetCalendar = () => {
 
 const toggleTalking = async (santaDay) => {
   let dayCheck = localStorageService.getData("santaDays");
+  try {
+    dayCheck = JSON.parse(dayCheck); // Parse JSON if stored data is in JSON format
+  } catch (e) {
+    dayCheck = dayCheck || 0;
+  }
 
   if(!isTalking.value && dayCheck < santaDay && santaText.hasOwnProperty(santaDay)){
     text.value = santaText[santaDay];
