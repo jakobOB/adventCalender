@@ -20,6 +20,11 @@
       </div>
       <Vue3Lottie :animationData="santaJSON" class="figure" :class="isTalking ? 'highlight' : ''"/>
     </div>
+    <Fireworks v-if="showFireworks" :options="fireworksOptions"
+               :style="{top: 0, left: 50,
+               width: '100%', height: '100%',
+               position: 'fixed', zIndex: 800}"
+    />
   </div>
 </template>
 
@@ -29,6 +34,7 @@ import {LocalStorageService} from "@/service/storageservice.js";
 import {Vue3Lottie} from "vue3-lottie";
 import santaJSON from "@/assets/animations/santa.json";
 import {ref} from "vue";
+import {Fireworks} from "@fireworks-js/vue";
 
 const santaText = {
   "1": "Hi there!<br/> I'm Jano, and I’m thrilled to be your personal English teacher for the next 24 days. Together, " +
@@ -56,21 +62,40 @@ const santaText = {
       "We’ll explore useful words and phrases related to holidays throughout the year. What are some specific Italian holidays? " +
       "Which days hold significance during Easter? And, of course, we’ll cover all the essential vocabulary for Christmas! " +
       "Are you ready for one last ride?",
-  "25": "Congratulations! You did it! You've successfully completed your advent calendar and can now consider yourself a true English pro! " +
+  "24": "Congratulations! You did it! You've successfully completed your advent calendar and can now consider yourself a true English pro! " +
       "I’m confident that you can engage in conversations with ease and feel more confident speaking English. While there’s still much to learn, " +
       "remember that progress comes step by step! We’re proud of you and all that you’ve accomplished! Merry Christmas!"
 }
 
 const localStorageService = new LocalStorageService();
 const isTalking = ref(false);
+const showFireworks = ref(false);
 
 const doorsOpened = localStorageService.getData("doorsOpened") || 0;
 
 const text = ref('');
 
+const fireworksOptions = ref({
+  speed: 3,
+  acceleration: 1.05,
+  friction: 0.98,
+  gravity: 1.5,
+  particles: 50,
+  trace: 3,
+  traceSpeed: 8,
+  flicker: 50,
+  intensity: 30,
+  explosion: 10,
+  hue: { min: 0, max: 360 }, // Add colors to the options
+});
+
 const resetCalendar = () => {
   localStorageService.clearLocalStorage();
   doorsOpened.value = 0;
+};
+
+const firework = () => {
+  showFireworks.value = true;
 };
 
 const toggleTalking = async (santaDay) => {
@@ -81,9 +106,14 @@ const toggleTalking = async (santaDay) => {
     dayCheck = dayCheck || 0;
   }
 
+  if (santaDay === 24) {
+    firework();
+  }
+
   if(!isTalking.value && dayCheck < santaDay && santaText.hasOwnProperty(santaDay)){
     text.value = santaText[santaDay];
     isTalking.value = true;
+    console.log("Santa is talking");
   } else {
     isTalking.value = false;
     text.value = '';

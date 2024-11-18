@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import {ref, watch} from 'vue';
+import { ref, watch} from 'vue';
 import VocabularyDialog from "@/components/VocabularyDialog.vue";
 import SentenceDialog from "@/components/SentenceDialog.vue";
 import ListeningDialog from "@/components/ListeningDialog.vue";
@@ -132,17 +132,16 @@ const closeDialog = () => {
   isSentenceDay.value = false;
   isListeningDay.value = false;
   isTranslationDay.value = false;
-
-  let opened = localStorageService.getData('doorsOpened', props.day);
-  if(props.day === 24 && opened === 24) {
-    const isTalking = props.santaSpeaks(25);
-  }
 };
 
 const getExercise = (day) => {
   if(day === 18) return "Translation"
   if(day === 19) return "Vocabulary"
   if(day === 20) return "Translation"
+  if(day === 21) return "Vocabulary"
+  if(day === 22) return "Translation"
+  if(day === 23) return "Listening"
+  if(day === 24) return
   const exercises = ["Vocabulary", "Sentence Completion", "Translation", "Listening"];
   return exercises[(day - 1) % 4];
 };
