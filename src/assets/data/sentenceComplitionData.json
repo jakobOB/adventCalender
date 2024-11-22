@@ -1,20 +1,20 @@
 {
   "Everyday English": [
-    { "before": "I might not go to work today. I am feeling a bit", "after": ".", "solution": "Hello", "selected": "" },
-    { "before": "Thank you so much! I really", "after": "your help.", "solution": "", "selected": "" },
-    { "before": "Never", "after": "! I can go on my own.", "solution": "", "selected": "" },
-    { "before": "I am", "after": "tomorrow, I can help you then.", "solution": "", "selected": "" },
-    { "before": "She is always", "after": "about the bad weather.", "solution": "", "selected": "" },
-    { "before": "You can call me", "after": "if you need help.", "solution": "", "selected": "" },
-    { "before": "No", "after": ", I’ll take care of it!", "solution": "", "selected": "" },
-    { "before": "I haven’t eaten all day, I am", "after": "!", "solution": "", "selected": "" },
-    { "before": "I need to", "after": "something to eat before work, my lunch break is too short.", "solution": "", "selected": "" }
+    { "before": "I might not go to work today. I am feeling a bit", "after": ".", "solution": "under the weather", "selected": "" },
+    { "before": "Thank you so much! I really", "after": "your help.", "solution": "appreciate", "selected": "" },
+    { "before": "Never", "after": "! I can go on my own.", "solution": "mind", "selected": "" },
+    { "before": "I am", "after": "tomorrow, I can help you then.", "solution": "free", "selected": "" },
+    { "before": "She is always", "after": "about the bad weather.", "solution": "complaining", "selected": "" },
+    { "before": "You can call me", "after": "if you need help.", "solution": "anytime", "selected": "" },
+    { "before": "No", "after": ", I’ll take care of it!", "solution": "worries", "selected": "" },
+    { "before": "I haven’t eaten all day, I am", "after": "!", "solution": "starving", "selected": "" },
+    { "before": "I need to", "after": "something to eat before work, my lunch break is too short.", "solution": "grab", "selected": "" }
   ],
   "On the Road": [
     { "before": "We need to stop at the next", "after": ". We are almost out of gas!", "solution": "gas station", "selected": "" },
     { "before": "We made a", "after": "for two.", "solution": "reservation", "selected": "" },
-    { "before": "Excuse me", "after": ", could you tell me where the toilets are?", "solution": "sir/ma'am", "selected": "" },
-    { "before": "Where is the closest", "after": "? We would like to go to the city center.", "solution": "bus stop", "selected": "" },
+    { "before": "Excuse me", "after": ", could you tell me where the toilets are?", "solution": "sir", "selected": "" },
+    { "before": "Where is the closest", "after": "? We would like to go to the city center.", "solution": "metro station", "selected": "" },
     { "before": "Do you have any", "after": "for a good restaurant?", "solution": "recommendations", "selected": "" },
     { "before": "", "after": "does this souvenir cost?", "solution": "How much", "selected": "" },
     { "before": "Would you like to pay with", "after": "or card?", "solution": "cash", "selected": "" },
@@ -22,23 +22,23 @@
     { "before": "I would like", "after": "a room for three nights.", "solution": "to book", "selected": "" }
   ],
   "In the Hospital": [
-    { "before": "I’ve been feeling", "after": "for several days now.", "solution": "unwell", "selected": "" },
-    { "before": "I need to check your", "after": "before we take your blood.", "solution": "vitals", "selected": "" },
+    { "before": "I’ve been feeling", "after": "for several days now.", "solution": "sick", "selected": "" },
+    { "before": "I need to check your", "after": "before we take your blood.", "solution": "blood pressure", "selected": "" },
     { "before": "I think I might have the", "after": "; I've been feeling sick and I have a fever.", "solution": "flu", "selected": "" },
     { "before": "In autumn, many people catch a", "after": "due to the temperature change.", "solution": "cold", "selected": "" },
-    { "before": "With this", "after": "you can pick up the medicines at the", "solution": "prescription, pharmacy", "selected": "" },
+    { "before": "With this", "after": "you can pick up the medicine at the pharmacy.", "solution": "prescription", "selected": "" },
     { "before": "Can you prescribe me a", "after": "? My headache is really bad.", "solution": "painkiller", "selected": "" },
     { "before": "Sir, could you tell me how you got here? I arrived by", "after": "after the accident.", "solution": "ambulance", "selected": "" },
-    { "before": "Are you", "after": "to anything? Please make sure to mention all allergies to avoid potential side effects.", "solution": "allergic", "selected": "" },
+    { "before": "Are you", "after": "to anything? Please mention all allergies to avoid side effects.", "solution": "allergic", "selected": "" },
     { "before": "There’s a persistent", "after": "in my lower back.", "solution": "pain", "selected": "" }
   ],
   "At the Hair saloon": [
     { "before": "I recommend a", "after": "to remove the", "solution": "trim, split ends", "selected": "" },
-    { "before": "Could you", "after": "my hair for the event this weekend? I’d love something special.", "solution": "style", "selected": "" },
+    { "before": "Could you", "after": "my hair for the event this weekend? I’d love something special.", "solution": "braid", "selected": "" },
     { "before": "How would you like your", "after": "today, down the middle or to the side?", "solution": "parting", "selected": "" },
-    { "before": "I’m not sure whether I should", "after": "my hair or just", "solution": "dye, highlight", "selected": "" },
+    { "before": "I’m not sure whether I should dye my hair or just", "after": "it for a subtle change;", "solution": "tone", "selected": "" },
     { "before": "My", "after": "are showing; could you please touch them up?", "solution": "roots", "selected": "" },
-    { "before": "Let’s start with a", "after": "to give your hair a fresh look.", "solution": "cut", "selected": "" },
+    { "before": "Let’s start with a", "after": "to give your hair a fresh look.", "solution": "trim", "selected": "" },
     { "before": "I’m considering a", "after": "for some waves; what do you think?", "solution": "perm", "selected": "" }
   ]
 }

@@ -37,34 +37,33 @@ import {ref} from "vue";
 import {Fireworks} from "@fireworks-js/vue";
 
 const santaText = {
-  "1": "Hi there!<br/> I'm Jano, and I’m thrilled to be your personal English teacher for the next 24 days. Together, " +
-      "we'll explore new vocabulary every day, helping you become more confident with the language. The calendar is divided into six exciting themes, " +
-      "so you'll be learning English in a variety of contexts! I promise we'll have a great time—trust the process, and by Christmas, you'll be an English expert!<br/> " +
-      "Ready to dive in?<br/> Well then, let's get this party started!",
-  "5": "Hi there!<br/> How are you today? Do you feel like your English is improving? I’m confident it is!<br/> " +
-      "Today, we’ll dive into our second chapter, <b>“On the Road.”</b> Over the next few days, you’ll learn new vocabulary " +
-      "that will be helpful for traveling around the world.<br/> Are you ready?<br/> Let’s get started!",
-  "9": "Hi there!<br/> New day, new chapter! Are you ready to explore the English language further?<br/> " +
+  "1": "Hi there!<br/><br/> I'm Jano, and I’m thrilled to be your personal English teacher for the next 24 days.<br/>Together, " +
+      "we'll explore new vocabulary every day, helping you become more confident with the language.<br/>The calendar is divided into six exciting themes, " +
+      "so you'll be learning English in a variety of contexts!<br/>I promise we'll have a great time—trust the process, and by Christmas, you'll be an English expert!<br/> " +
+      "<br/>Ready to dive in?<br/> Well then, let's get this party started!",
+  "5": "Hi you!<br/><br/> How are you today? Do you feel like your English is improving? I’m confident it is!<br/> " +
+      "Today, we’ll dive into our second chapter,<br/> <b>“On the Road.”</b> <br/>Over the next few days, you’ll learn new vocabulary " +
+      "that will be helpful for traveling around the world.<br/><br/> Are you ready?<br/> Let’s get started!",
+  "9": "Hi there!<br/><br/> New day, new chapter! Are you ready to explore the English language further?<br/> " +
       "This time, we’ll focus on more specific vocabulary. We’ll learn new words and phrases that may be useful" +
-      " when visiting a hospital.<br/> Let’s see how many of these you’re already familiar with!<br/> Let’s get started!",
-  "13": "Hi there!<br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
-      "the Hair Salon!<br/> Who doesn’t enjoy treating themselves to a beautiful haircut from time to time?<br/> In the coming days, " +
-      "you’ll learn how to express yourself at the salon, ensuring you get exactly what you want!<br/> Let’s get started!",
-  "17": "As Christmas approaches, your English skills are improving every day! This new chapter may seem a bit challenging at first, " +
-      "but it will be fun to learn and useful for showing off your English skills. Over the next few days, we will focus on idioms—phrases " +
-      "that have meanings different from the individual words. For example, \"kick the bucket\" means to die, not to literally kick a bucket.<br/> " +
-      "You’ll understand what I mean soon! The idioms we’ll explore are very common and will help you speak English more naturally.<br/>" +
-      "One last thing, in this chapter, you’ll complete two vocabulary sessions paired with their corresponding translation sessions, " +
-      "rather than the usual vocabulary-sentence completion-translation-listening format. This approach is more effective here, " +
-      "as it’s crucial for you to understand and remember the meanings of the idioms to use them correctly.<br/>Are you ready to sound like a pro?<br/>",
-  "21": "Hello again! Welcome to the final chapter of your personalized advent calendar! How are you feeling today? " +
-      "Are the Christmas preparations already causing you stress? Don't worry—I got you! This last chapter will be quick and easy. " +
+      " when visiting a hospital.<br/> Let’s see how many of these you’re already familiar with!<br/> <br/>Let’s go!",
+  "13": "Hi you!<br/><br/> Now that you’ve learned useful vocabulary and phrases for the hospital, we’ll move on to another exciting topic:<br/> " +
+      "”The Hair Salon!”<br/> Who doesn’t enjoy treating themselves to a beautiful haircut from time to time?<br/> In the coming days, " +
+      "you’ll learn how to express yourself at the salon, ensuring you get exactly what you want!<br/><br/> Let’s get started!",
+  "17": "As Christmas approaches, your English skills are improving every day!<br/><br/> This new chapter may seem a bit challenging at first, " +
+      "but it will be fun to learn and useful for showing off your English skills.<br/> Over the next few days, we will focus on idioms—phrases " +
+      "that have meanings different from the individual words.<br/> For example, \"kick the bucket\" means to die, not to literally kick a bucket.<br/> " +
+      "You’ll understand what I mean soon!<br/> The idioms we’ll explore are very common and will help you speak English more naturally.<br/>" +
+      "One last thing, in this chapter, you’ll complete two vocabulary sessions paired with their corresponding translation sessions." +
+      "<br/><br/>Are you ready to sound like a pro?<br/>",
+  "21": "Hello again!<br/><br/> Welcome to the final chapter of your personalized advent calendar!<br/> How are you feeling today?<br/> " +
+      "Are the Christmas preparations already causing you stress? Don't worry—I got you!<br/> This last chapter will be quick and easy.<br/> " +
       "We’ll explore useful words and phrases related to holidays throughout the year. What are some specific Italian holidays? " +
       "Which days hold significance during Easter? And, of course, we’ll cover all the essential vocabulary for Christmas! " +
-      "Are you ready for one last ride?",
-  "24": "Congratulations! You did it! You've successfully completed your advent calendar and can now consider yourself a true English pro! " +
-      "I’m confident that you can engage in conversations with ease and feel more confident speaking English. While there’s still much to learn, " +
-      "remember that progress comes step by step! We’re proud of you and all that you’ve accomplished! Merry Christmas!"
+      "<br/><br/>Are you ready for one last ride?",
+  "24": "Congratulations!<br/><br/> You did it!<br/> You've successfully completed your advent calendar and can now consider yourself a true English pro!<br/> " +
+      "I’m confident that you can engage in conversations with ease and feel more confident speaking English.<br/> While there’s still much to learn, " +
+      "remember that progress comes step by step!<br/> We’re proud of you and all that you’ve accomplished!<br/><br/> Merry Christmas!"
 }
 
 const localStorageService = new LocalStorageService();

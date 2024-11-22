@@ -4,7 +4,7 @@
       :draggable="false"
       :closable="false"
       modal
-      :style="{ width: '50rem', borderRadius: '15px', padding: '1rem' }"
+      :style="{ width: '55rem', borderRadius: '15px', padding: '1rem' }"
   >
     <div class="dialog-container">
       <h3 class="dialog-title">{{ topic }}</h3>
