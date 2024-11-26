@@ -1,7 +1,7 @@
 <template>
   <div class="calendar-wrapper">
     <div class="calendar-body" :class="isTalking ? 'overlay' : ''">
-      <button @click="resetCalendar">Reset Calendar</button>
+<!--      <button @click="resetCalendar">Reset Calendar</button>-->
       <div class="advent-card-grid">
         <AdventCard
             v-for="day in 24"
@@ -125,11 +125,22 @@ const toggleTalking = async (santaDay) => {
 <style scoped>
 .advent-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Auto-fit for responsive design */
-  grid-template-rows: repeat(auto-fill, 1fr); /* Ensure rows fill available space */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Auto-fit for responsive design */
   gap: 10px;
   padding: 10px;
   height: 100%; /* Take full available height */
+}
+
+@media (max-width: 1900px) {
+  .advent-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 1400px) {
+  .advent-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }
 
 .calendar-wrapper {

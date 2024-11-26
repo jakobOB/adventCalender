@@ -12,7 +12,7 @@
     {"german": "Ich brauche eine Empfehlung für einen Ort, an dem ich Frühstück essen kann.", "english": "I would need a recommendation for a place where I can have breakfast.", "valid": 0},
     {"german": "Wie viel kostet die Fahrkarte für die ganze Familie?", "english": "How much is the ticket for the whole family?", "valid": 0},
     {"german": "Madame, könnten Sie mir bitte den Weg zur nächsten U-Bahn-Station zeigen?", "english": "Madame, could you please show me the way to the nearest metro station?", "valid": 0},
-    {"german": "Sie sollten genügend Bargeld mitnehmen, falls Sie keinen Geldautomaten finden.", "english": "You should take enough cash in case you can't find an ATM.", "valid": 0},
+    {"german": "Sie sollten genügend Bargeld mitnehmen, falls Sie keinen Geldautomaten finden.", "english": "You should bring enough cash in case you can't find an ATM.", "valid": 0},
     {"german": "Wie lange dauert es, um zum Strand zu gelangen?", "english": "How long does it take to get to the beach?", "valid": 0},
     {"german": "Sie können die Tickets direkt im Bus buchen.", "english": "You can book the tickets directly in the bus.", "valid": 0}
   ],

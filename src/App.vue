@@ -3,6 +3,8 @@
     <CalenderComponent />
 
     <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: -5%"/>
+    <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: 25%"/>
+    <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: 50%"/>
     <Vue3Lottie :animationData="snowflakeJSON" class="snow" style="left: 75%"/>
   </div>
 </template>
@@ -19,7 +21,6 @@ const localStorageService = new LocalStorageService();
 
 onMounted(() => {
   localStorageService.initializeLocalStorage();
-  console.log('Local storage initialized');
 });
 </script>
 
