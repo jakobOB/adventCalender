@@ -196,8 +196,8 @@ watch(listeningData, (newVal) => {
 }
 
 .advent-card {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 100%;
   position: relative;
   cursor: pointer;
   transform-style: preserve-3d;
